@@ -48,9 +48,9 @@ RUN mkdir -p /root/.ssh
 ADD pemkey /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-RUN git config --global user.name 'rpurdon'
-RUN git config --global user.email 'rpurdon@prodigyfinance.com'
-RUN ssh-keygen -p -P 001287Da! -N "" -f ~/.ssh/id_rsa
+RUN git config --global user.name 'your name'
+RUN git config --global user.email 'your email'
+RUN ssh-keygen -p -P 'yourpassword' -N "" -f ~/.ssh/id_rsa
 WORKDIR $INSTALL_PATH
 # We're going to be executing a number of commands below, and
 # having to CD into the /my_dockerized_app folder every time would be
