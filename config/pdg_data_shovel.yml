@@ -1,0 +1,15 @@
+:amqp:
+  :url: 'rabbitmq'
+  :port: 5672
+  :username: 'guest'
+  :password: 'guest'
+  :queue: 'school-queue.updates'
+  :exchange: 'school-api'
+  :vhost: '/'
+  :prefetch: 10
+  :routing_keys:
+    - 'school-api.updates'
+:resque:
+  :queue: 'consumer-queue'
+  :klass: 'ResqueTask'
+  :redis: 'redis:6379'
